@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор настроения — Дворы.СПб</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/mood.css">
+</head>
+<body>
+
+  <!-- шапка -->
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo-link">
+        <div class="header__logo">
+          <img src="images/60.png" alt="Дворы.СПб" class="header-logo-img">
+        </div>
+      </a>
+      
+      <nav class="header__nav">
+        <a href="index.html" class="header__nav-item">Главная</a>
+        <a href="mood.html" class="header__nav-item">Выбор настроения</a>
+        <a href="catalog.html" class="header__nav-item">Каталог</a>
+        <a href="#" class="header__nav-item">Карта</a>
+        <a href="#" class="header__nav-item">О нас</a>
+        <a href="#" class="header__nav-item">Контакты</a>
+      </nav>
+
+      <button class="header__menu-toggle" onclick="toggleMenu()">
+        <img src="images/menu.svg" alt="Меню" class="menu-icon">
+      </button>
+
+      <a href="cabinet.html" class="header__user-icon">
+        <img src="images/Group_86.svg" alt="Профиль" class="user-icon">
+      </a>
+    </div>
+  </header>
+
+  <main class="mood-page">
+    
+    <div class="container">
+
+      <!-- слайдер -->
+      <div id="moodCarousel" class="carousel slide" data-bs-ride="false">
+
+        <h1 class="page-title">Выбор настроения</h1>
+        
+        <!-- стрелочки -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#moodCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        
+        <button class="carousel-control-next" type="button" data-bs-target="#moodCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
+
+        <!-- слайды -->
+        <div class="carousel-inner">
+          
+          <!-- спокойствие -->
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              
+              <div class="col-lg-5">
+                <h2 class="mood-title">Спокойствие</h2>
+                <div class="mood-description">
+                  <p>Состояние спокойствия характеризуется внутренней гармонией, расслабленностью и&nbsp;умиротворением. Это момент, когда вы&nbsp;не&nbsp;спешите, наслаждаетесь настоящим.</p>
+                  <p>В&nbsp;архитектурном контексте спокойствию соответствуют дворы с&nbsp;плавными, текучими линиями, природными мотивами в&nbsp;декоре.</p>
+                  <p>Такие пространства часто имеют мягкое, рассеянное освещение, зеленые насаждения и&nbsp;элементы, напоминающие о&nbsp;природе.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-7">
+                <div class="mood-images">
+                  <div class="mood-image-large">
+                    <img src="images/32.png" alt="Спокойствие - фото 1" class="img-fluid">
+                  </div>
+                  <div class="mood-image-small">
+                    <img src="images/33.png" alt="Спокойствие - фото 2" class="img-fluid">
+                    <a href="catalog.html" class="btn-catalog">Перейти в каталог</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- грусть -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-lg-5">
+                <h2 class="mood-title">Грусть</h2>
+                <div class="mood-description">
+                  <p>Грусть&nbsp;&mdash; это тихое, созерцательное состояние, когда хочется замедлиться и&nbsp;прислушаться к&nbsp;себе. Время для рефлексии и&nbsp;внутренних открытий.</p>
+                  <p>В&nbsp;архитектуре грусти соответствуют дворы с&nbsp;приглушённой палитрой, теневыми уголками, элементами, несущими отпечаток времени.</p>
+                  <p>Такие пространства располагают к&nbsp;неспешным прогулкам, психологической релаксации, внутренним размышлениям и&nbsp;поиску красоты в&nbsp;мелочах.</p>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="mood-images">
+                  <div class="mood-image-large">
+                    <img src="images/23.jpg" alt="Грусть - фото 1" class="img-fluid">
+                  </div>
+                  <div class="mood-image-small">
+                    <img src="images/24.png" alt="Грусть - фото 2" class="img-fluid">
+                    <a href="catalog.html" class="btn-catalog">Перейти в каталог</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- вдохновение -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-lg-5">
+                <h2 class="mood-title">Вдохновение</h2>
+                <div class="mood-description">
+                  <p>Вдохновение&nbsp;&mdash; это состояние творческого подъёма, когда открываются новые горизонты и&nbsp;возможности. Энергия для действий и&nbsp;свершений.</p>
+                  <p>В&nbsp;архитектуре вдохновению соответствуют необычные формы, смелые решения, игра света и&nbsp;тени, неожиданные ракурсы.</p>
+                  <p>Такие дворы пробуждают фантазию, дарят импульс к&nbsp;созданию нового и&nbsp;помогают увидеть привычное под другим углом.</p>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="mood-images">
+                  <div class="mood-image-large">
+                    <img src="images/25.jpg" alt="Вдохновение - фото 1" class="img-fluid">
+                  </div>
+                  <div class="mood-image-small">
+                    <img src="images/26.png" alt="Вдохновение - фото 2" class="img-fluid">
+                    <a href="catalog.html" class="btn-catalog">Перейти в каталог</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- тревога -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-lg-5">
+                <h2 class="mood-title">Тревога</h2>
+                <div class="mood-description">
+                  <p>Тревога&nbsp;&mdash; это состояние внутреннего напряжения, когда мир кажется неустойчивым. Время, когда важно найти опору и&nbsp;чувство безопасности.</p>
+                  <p>В&nbsp;архитектуре тревоге могут соответствовать дворы с&nbsp;контрастными переходами, замкнутыми пространствами, элементами, создающими ощущение укрытия.</p>
+                  <p>Такие места помогают пережить сложные моменты, давая возможность остановиться, выдохнуть, и&nbsp;найти внутреннее равновесие.</p>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="mood-images">
+                  <div class="mood-image-large">
+                    <img src="images/27.jpg" alt="Тревога - фото 1" class="img-fluid">
+                  </div>
+                  <div class="mood-image-small">
+                    <img src="images/28.png" alt="Тревога - фото 2" class="img-fluid">
+                    <a href="catalog.html" class="btn-catalog">Перейти в каталог</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+      <!-- как пользоваться -->
+      <section class="how-to-use">
+        <div class="how-to-use__inner">
+          
+          <h2 class="section-title">Как пользоваться</h2>
+          
+          <div class="steps-grid">
+            
+            <!-- 1 -->
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Текущее состояние</h3>
+              <p class="step-description">
+                Укажите ваше текущее эмоциональное состояние&nbsp;&mdash; спокойствие, грусть, вдохновение или тревогу. Наша система подберёт дворы, которые наиболее точно соответствуют вашему состоянию.
+              </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Описание двора</h3>
+              <p class="step-description">
+                Каждый двор в&nbsp;нашей базе сопровождается описанием: архитектурный стиль, год постройки, имя архитектора, история и&nbsp;интересные факты. Вы&nbsp;узнаете как эти здания вписываются в&nbsp;Петербург.
+              </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Избранное</h3>
+              <p class="step-description">
+                Создавайте личные коллекции любимых дворов и&nbsp;возвращайтесь к&nbsp;ним в&nbsp;любое время. Все сохранённые дворы будут доступны в&nbsp;личном кабинете, где вы&nbsp;также сможете управлять списком.
+              </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Карта дворов</h3>
+              <p class="step-description">
+                Визуализируйте все дворы на&nbsp;интерактивной карте города, чтобы планировать удобные маршруты. Вы&nbsp;можете фильтровать отображаемые объекты по&nbsp;архитектурному стилю или району.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+  </main>
+
+  <!-- подвальчик -->
+  <footer class="footer-full-width">
+    <div class="footer-container">
+      
+      <div class="footer__top">
+        <div class="footer__brand">
+          <!-- лого на главную -->
+          <a href="index.html" class="footer__logo-link">
+            <div class="footer__logo">
+              <img src="images/48.png" alt="Дворы.СПб" class="footer-logo-img">
+            </div>
+          </a>
+          <span class="footer__site-name">Дворы.СПб</span>
+        </div>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">
+            <img src="images/vk.svg" alt="VK" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/max.svg" alt="MAX" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/mail.svg" alt="mail" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__middle">
+        <div class="footer__sitemap">
+          <div class="footer__sitemap-title">Карта сайта:</div>
+          <div class="footer__links-row">
+            <div class="footer__links-col">
+              <a href="index.html">Главная</a>
+              <a href="mood.html">Выбор настроения</a>
+              <a href="catalog.html">Каталог</a>
+              <a href="#">Карта</a>
+            </div>
+            <div class="footer__links-col">
+              <a href="cabinet.html">Личный кабинет</a>
+              <a href="#">О нас</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer__support">
+            Нашли ошибку?<br>
+            Напишите нам на почту<br>
+            <a>support@gmail.com</a>
+          </div>
+          <div class="footer__agreements">
+            <a href="#">Согласие на обработку</a>
+            <a href="#">Согласие на рассылку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          2026 DvorySPb.ru. Политика конфиденциальности ПД Реквизиты
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- шапка -->
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo-link">
+        <div class="header__logo">
+          <img src="images/60.png" alt="Дворы.СПб" class="header-logo-img">
+        </div>
+      </a>
+      
+      <nav class="header__nav" id="headerNav">
+        <a href="index.html" class="header__nav-item">Главная</a>
+        <a href="mood.html" class="header__nav-item">Выбор настроения</a>
+        <a href="catalog.html" class="header__nav-item">Каталог</a>
+        <a href="#" class="header__nav-item">Карта</a>
+        <a href="#" class="header__nav-item">О нас</a>
+        <a href="#" class="header__nav-item">Контакты</a>
+      </nav>
+
+      <button class="header__menu-toggle" onclick="toggleMenu()">
+        <img src="images/menu.svg" alt="Меню" class="menu-icon">
+      </button>
+
+      <a href="cabinet.html" class="header__user-icon">
+        <img src="images/Group_86.svg" alt="Профиль" class="user-icon">
+      </a>
+    </div>
+  </header>
+
+  <!-- всё -->
+  <div class="content-wrapper">
+
+    <h1 class="main__title">Личный кабинет</h1>
+
+    <!-- профиль и статус -->
+    <div class="cards-row">
+      
+      <article class="card--profile">
+        <img class="avatar" src="images/1.png" alt="Аватар" />
+        <div class="card__info">
+          <div class="card__name">Юлия</div>
+          <div class="card__nickname">Зовите меня: pinkie</div>
+          <div class="card__email">pinkie@gmail.com</div>
+        </div>
+        <div class="card__edit">
+          <img src="images/Group_48.svg" alt="Редактировать" class="edit-icon">
+        </div>
+      </article>
+
+      <article class="card--status">
+        <div class="status-circle"></div>
+        <div class="status-info">
+          <div class="status-info__label">Статус</div>
+          <div class="status-info__value">Базовый</div>
+        </div>
+      </article>
+    </div>
+
+    <!-- избранное -->
+    <h2 class="favorites__title">Избранное</h2>
+
+    <div class="favorites-row">
+      
+      <article class="favorite-card">
+        <div class="favorite-card__remove">
+          <img src="images/Group_50.svg" alt="Удалить" class="remove-icon">
+        </div>
+        <div class="favorite-card__image" style="background-image: url('images/4.png');"></div>
+        <div class="favorite-card__info">
+          <div class="favorite-card__header">
+            <div class="favorite-card__name">Большой проспект П. ...</div>
+            <div class="favorite-card__rating">
+              <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+              4.9
+            </div>
+          </div>
+          <div class="favorite-card__district">Петроградская сторона</div>
+          <div class="favorite-card__tag">#эклектицизм</div>
+        </div>
+      </article>
+
+      <article class="favorite-card">
+        <div class="favorite-card__remove">
+          <img src="images/Group_50.svg" alt="Удалить" class="remove-icon">
+        </div>
+        <div class="favorite-card__image" style="background-image: url('images/5.png');"></div>
+        <div class="favorite-card__info">
+          <div class="favorite-card__header">
+            <div class="favorite-card__name">Рубинштейна, 23 </div>
+            <div class="favorite-card__rating">
+              <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+              4.9
+            </div>
+          </div>
+          <div class="favorite-card__district">Центральный район</div>
+          <div class="favorite-card__tag">#конструктивизм</div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- подвальчик -->
+  <footer class="footer-full-width">
+    <div class="footer-container">
+      
+      <div class="footer__top">
+        <div class="footer__brand">
+          <!-- лого на главную -->
+          <a href="index.html" class="footer__logo-link">
+            <div class="footer__logo">
+              <img src="images/48.png" alt="Дворы.СПб" class="footer-logo-img">
+            </div>
+          </a>
+          <span class="footer__site-name">Дворы.СПб</span>
+        </div>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">
+            <img src="images/vk.svg" alt="VK" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/max.svg" alt="MAX" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/mail.svg" alt="mail" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__middle">
+        <div class="footer__sitemap">
+          <div class="footer__sitemap-title">Карта сайта:</div>
+          <div class="footer__links-row">
+            <div class="footer__links-col">
+              <a href="index.html">Главная</a>
+              <a href="mood.html">Выбор настроения</a>
+              <a href="catalog.html">Каталог</a>
+              <a href="#">Карта</a>
+            </div>
+            <div class="footer__links-col">
+              <a href="cabinet.html">Личный кабинет</a>
+              <a href="#">О нас</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer__support">
+            Нашли ошибку?<br>
+            Напишите нам на почту<br>
+            <a>support@gmail.com</a>
+          </div>
+          <div class="footer__agreements">
+            <a href="#">Согласие на обработку</a>
+            <a href="#">Согласие на рассылку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          2026 DvorySPb.ru. Политика конфиденциальности ПД Реквизиты
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('headerNav');
+    nav.classList.toggle('active');
+  }
+  </script>
+
+</body>
+</html>

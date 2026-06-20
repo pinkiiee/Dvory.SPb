@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дворы.СПб — Петербургские дворы: архитектура настроения</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-index.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo-link">
+        <div class="header__logo">
+          <img src="images/60.png" alt="Дворы.СПб" class="header-logo-img">
+        </div>
+      </a>
+      
+      <nav class="header__nav" id="headerNav">
+        <a href="index.html" class="header__nav-item">Главная</a>
+        <a href="mood.html" class="header__nav-item">Выбор настроения</a>
+        <a href="catalog.html" class="header__nav-item">Каталог</a>
+        <a href="#" class="header__nav-item">Карта</a>
+        <a href="#" class="header__nav-item">О нас</a>
+        <a href="#" class="header__nav-item">Контакты</a>
+      </nav>
+
+      <button class="header__menu-toggle" onclick="toggleMenu()">
+        <img src="images/menu.svg" alt="Меню" class="menu-icon">
+      </button>
+
+      <a href="cabinet.html" class="header__user-icon">
+        <img src="images/Group_86.svg" alt="Профиль" class="user-icon">
+      </a>
+    </div>
+  </header>
+
+  <main class="main-page">
+
+    <!-- хиро блок -->
+    <section class="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+      
+      <div class="container hero__content">
+        <h1 class="hero__title">Петербургские дворы:<br>архитектура настроения</h1>
+        
+        <p class="hero__subtitle">
+          Откройте для себя город заново. Исследуйте атмосферные дворы&nbsp;&mdash; колодцы, 
+          находите места, созвучные вашему настроению, и&nbsp;погружайтесь в&nbsp;историю 
+          петербургской архитектуры через уникальный эмоциональный опыт.
+        </p>
+        
+        <a href="mood.html" class="hero__btn">Подобрать по настроению</a>
+      </div>
+    </section>
+
+      </main>
+
+  <!-- блок с картой -->
+  <section class="map-section">
+    <div class="container">
+      
+      <h2 class="section-title">Карта</h2>
+
+      <div class="map-layout">
+
+        <!-- фильтры слева -->
+        <div class="filters-wrapper">
+          
+          <!-- фильтр по стилю -->
+          <div class="filter-dropdown" id="style-filter">
+            <button class="filter-dropdown__trigger" onclick="toggleDropdown('style')">
+              <span class="filter-dropdown__label">Стиль</span>
+              <img src="images/arrow-down.svg" alt="Стрелка" class="filter-arrow">
+            </button>
+            <div class="filter-dropdown__menu">
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="modern">
+                <span>Модерн</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="eclecticism">
+                <span>Эклектика</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="constructivism">
+                <span>Конструктивизм</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- фильтр по району -->
+          <div class="filter-dropdown" id="district-filter">
+            <button class="filter-dropdown__trigger" onclick="toggleDropdown('district')">
+              <span class="filter-dropdown__label">Район</span>
+              <img src="images/arrow-down.svg" alt="Стрелка" class="filter-arrow">
+            </button>
+            <div class="filter-dropdown__menu">
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="district" value="central">
+                <span>Центральный район</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="district" value="vasilevskiy">
+                <span>Васильевский остров</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="district" value="petrogradskaya">
+                <span>Петроградская сторона</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- сброс фильтров -->
+          <button class="reset-filters-btn" onclick="resetAllFilters()">
+            Сбросить все фильтры
+          </button>
+
+        </div>
+
+        <!-- карта справа -->
+        <div class="map-container">
+          <div id="map" class="map"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+    <!-- как пользоваться -->
+  <section class="how-to-use">
+    <div class="how-to-use__inner">
+      
+      <h2 class="how-to-use__title">Как пользоваться</h2>
+      
+      <div class="steps-grid">
+        
+        <!-- 1 -->
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Выбор настроения</h3>
+          <p class="step-description">
+            Укажите ваше текущее эмоциональное состояние&nbsp;&mdash; спокойствие, грусть, вдохновение или тревогу. Наша система подберёт дворы, которые наиболее точно соответствуют вашему состоянию.
+          </p>
+        </div>
+
+        <!-- 2 -->
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Описание двора</h3>
+          <p class="step-description">
+            Каждый двор в&nbsp;нашей базе сопровождается описанием: архитектурный стиль, год постройки, имя архитектора, история и&nbsp;интересные факты. Вы&nbsp;узнаете как эти здания вписываются в&nbsp;Петербург.
+          </p>
+        </div>
+
+        <!-- 3 -->
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Избранное</h3>
+          <p class="step-description">
+            Создавайте личные коллекции любимых дворов и&nbsp;возвращайтесь к&nbsp;ним в&nbsp;любое время. Все сохранённые дворы будут доступны в&nbsp;личном кабинете, где вы&nbsp;также сможете управлять списком.
+          </p>
+        </div>
+
+        <!-- 4 -->
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Карта дворов</h3>
+          <p class="step-description">
+            Визуализируйте все дворы на&nbsp;интерактивной карте города, чтобы планировать удобные маршруты. Вы&nbsp;можете фильтровать отображаемые объекты по&nbsp;архитектурному стилю или району.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- популярные дворы -->
+  <section class="popular-courtyards">
+    <div class="container">
+      
+      <h2 class="section-title">Популярные дворы</h2>
+      
+      <div class="popular-slider">
+        <button class="slider-arrow slider-arrow--prev">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <div class="popular-cards">
+          
+          <!-- карточка 1 -->
+          <article class="popular-card">
+            <div class="popular-card__image">
+              <img src="images/11.png" alt="Большой проспект П.С., 106" class="popular-card__img">
+            </div>
+            <div class="popular-card__info">
+              <h3 class="popular-card__title">Большой проспект П.С., 106</h3>
+              <p class="popular-card__district">Петроградская сторона</p>
+              <p class="popular-card__style">#эклектицизм</p>
+              <a href="dvor.html" class="popular-card__link">Подробнее</a>
+            </div>
+          </article>
+
+          <!-- карточка 2 -->
+          <article class="popular-card">
+            <div class="popular-card__image">
+              <img src="images/12.png" alt="11-я линия В.О., 20" class="popular-card__img">
+            </div>
+            <div class="popular-card__info">
+              <h3 class="popular-card__title">11-я линия В.О., 20</h3>
+              <p class="popular-card__district">Васильевский остров</p>
+              <p class="popular-card__style">#модерн</p>
+              <a href="dvor.html" class="popular-card__link">Подробнее</a>
+            </div>
+          </article>
+
+          <!-- карточка 3 -->
+          <article class="popular-card">
+            <div class="popular-card__image">
+              <img src="images/13.png" alt="Рубинштейна, 23" class="popular-card__img">
+            </div>
+            <div class="popular-card__info">
+              <h3 class="popular-card__title">Рубинштейна, 23</h3>
+              <p class="popular-card__district">Центральный район</p>
+              <p class="popular-card__style">#конструктивизм</p>
+              <a href="dvor.html" class="popular-card__link">Подробнее</a>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="slider-arrow slider-arrow--next">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- статистика -->
+  <section class="statistics-section">
+    <div class="statistics-section__inner">
+      
+      <h2 class="statistics-section__title">Статистика</h2>
+      
+      <div class="statistics-grid">
+        
+        <!-- карточка 1 -->
+        <div class="stat-card">
+          <div class="stat-number">150+</div>
+          <div class="stat-label">Дворы</div>
+        </div>
+
+        <!-- карточка 2 -->
+        <div class="stat-card">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Архитектурные стили</div>
+        </div>
+
+        <!-- карточка 3 -->
+        <div class="stat-card">
+          <div class="stat-number">10</div>
+          <div class="stat-label">Районы</div>
+        </div>
+
+      </div>
+
+      <div class="statistics-descriptions">
+        <p class="stat-description">
+          На&nbsp;сегодняшний день в&nbsp;нашей коллекции насчитывается более полутора сотен уникальных дворов-колодцев, расположенных в&nbsp;разных районах Санкт-Петербурга. Каждый объект прошел тщательный отбор и&nbsp;документирование.
+        </p>
+        <p class="stat-description">
+          В&nbsp;нашей базе представлены дворы, относящиеся к&nbsp;двенадцати различным архитектурным стилям и&nbsp;периодам: от&nbsp;допетровской архитектуры и&nbsp;итальянского ренессанса до&nbsp;советского конструктивизма и&nbsp;сталинского ампира.
+        </p>
+        <p class="stat-description">
+          География нашего проекта охватывает десять районов Санкт-Петербурга, включая как исторический центр, так и&nbsp;менее известные, но&nbsp;не&nbsp;менее интересные локации за&nbsp;его пределами.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  </main>
+
+  <!-- подвальчик -->
+  <footer class="footer-full-width">
+    <div class="footer-container">
+      
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo-link">
+            <div class="footer__logo">
+              <img src="images/48.png" alt="Дворы.СПб" class="footer-logo-img">
+            </div>
+          </a>
+          <span class="footer__site-name">Дворы.СПб</span>
+        </div>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">
+            <img src="images/vk.svg" alt="VK" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/max.svg" alt="MAX" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/mail.svg" alt="mail" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__middle">
+        <div class="footer__sitemap">
+          <div class="footer__sitemap-title">Карта сайта:</div>
+          <div class="footer__links-row">
+            <div class="footer__links-col">
+              <a href="index.html">Главная</a>
+              <a href="mood.html">Выбор настроения</a>
+              <a href="catalog.html">Каталог</a>
+              <a href="#">Карта</a>
+            </div>
+            <div class="footer__links-col">
+              <a href="cabinet.html">Личный кабинет</a>
+              <a href="#">О нас</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer__support">
+            Нашли ошибку?<br>
+            Напишите нам на почту<br>
+            <a>support@gmail.com</a>
+          </div>
+          <div class="footer__agreements">
+            <a href="#">Согласие на обработку</a>
+            <a href="#">Согласие на рассылку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          2026 DvorySPb.ru. Политика конфиденциальности ПД Реквизиты
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('headerNav');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=3910541c-e1d2-42c9-b555-f4a384f7b5c4&lang=ru_RU" type="text/javascript"></script>
+
+  <script src="js/map.js"></script>
+</body>
+</html>

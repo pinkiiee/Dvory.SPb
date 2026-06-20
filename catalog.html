@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — Дворы.СПб</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-catalog.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo-link">
+        <div class="header__logo">
+          <img src="images/60.png" alt="Дворы.СПб" class="header-logo-img">
+        </div>
+      </a>
+      
+      <nav class="header__nav" id="headerNav">
+        <a href="index.html" class="header__nav-item">Главная</a>
+        <a href="mood.html" class="header__nav-item">Выбор настроения</a>
+        <a href="catalog.html" class="header__nav-item">Каталог</a>
+        <a href="#" class="header__nav-item">Карта</a>
+        <a href="#" class="header__nav-item">О нас</a>
+        <a href="#" class="header__nav-item">Контакты</a>
+      </nav>
+
+      <button class="header__menu-toggle" onclick="toggleMenu()">
+        <img src="images/menu.svg" alt="Меню" class="menu-icon">
+      </button>
+
+      <a href="cabinet.html" class="header__user-icon">
+        <img src="images/Group_86.svg" alt="Профиль" class="user-icon">
+      </a>
+    </div>
+  </header>
+
+  <main class="catalog-page">
+
+    <div class="container">
+    
+      <h1 class="page-title">Каталог</h1>
+
+      <!-- фильтрация обёртка -->
+      <div class="filters-section">
+
+        <!-- фильтрация выпадающие списочки -->
+        <div class="filters">
+          
+          <!-- фильтр по арх стилю -->
+          <div class="filter-dropdown" id="style-filter">
+            <button class="filter-dropdown__trigger" onclick="toggleDropdown('style')">
+              <span class="filter-dropdown__label">Стиль</span>
+              <img src="images/arrow-down.svg" alt="Стрелка" class="filter-arrow">
+            </button>
+            <div class="filter-dropdown__menu">
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="italian-renaissance">
+                <span>Итальянский ренессанс</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="modern">
+                <span>Модерн</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="gothic">
+                <span>Готика</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="eclecticism">
+                <span>Эклектика</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="neoclassicism">
+                <span>Неоклассицизм</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="constructivism">
+                <span>Конструктивизм</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="style" value="baroque">
+                <span>Барокко</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- фильтр по району -->
+          <div class="filter-dropdown" id="district-filter">
+            <button class="filter-dropdown__trigger" onclick="toggleDropdown('district')">
+              <span class="filter-dropdown__label">Район</span>
+              <img src="images/arrow-down.svg" alt="Стрелка" class="filter-arrow">
+            </button>
+            <div class="filter-dropdown__menu">
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="district" value="central">
+                <span>Центральный район</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="district" value="vasilevskiy">
+                <span>Васильевский остров</span>
+              </label>
+              <label class="filter-dropdown__item">
+                <input type="checkbox" name="district" value="petrogradskaya">
+                <span>Петроградская сторона</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- сьрос фильтров -->
+        <button class="reset-filters-btn" onclick="resetAllFilters()">
+          Сбросить все фильтры
+        </button>
+
+      </div>
+
+      <!-- карточки -->
+      <div class="cards-grid">
+        
+        <article class="favorite-card" data-style="eclecticism" data-district="petrogradskaya">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/11.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Большой проспект П. ...</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Петроградская сторона</div>
+            <div class="favorite-card__tag">#эклектицизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="modern" data-district="vasilevskiy">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/12.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">11-я линия В.О., 20</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Васильевский остров</div>
+            <div class="favorite-card__tag">#модерн</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="constructivism" data-district="central">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <a href="dvor.html" class="card-link">
+            <div class="favorite-card__image" style="background-image: url('images/13.png');"></div>
+            <div class="favorite-card__info">
+              <div class="favorite-card__header">
+                <div class="favorite-card__name">Рубинштейна, 23</div>
+                <div class="favorite-card__rating">
+                  <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                  4.9
+                </div>
+              </div>
+              <div class="favorite-card__district">Центральный район</div>
+              <div class="favorite-card__tag">#конструктивизм</div>
+            </div>
+          </a>
+        </article>
+
+        <article class="favorite-card" data-style="eclecticism" data-district="central">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/14.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Жуковского, 57</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Центральный район</div>
+            <div class="favorite-card__tag">#эклектицизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="constructivism" data-district="central">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/15.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Невский проспект, 74...</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Центральный район</div>
+            <div class="favorite-card__tag">#конструктивизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="eclecticism" data-district="central">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/16.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Литейный проспект, 61</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Центральный район</div>
+            <div class="favorite-card__tag">#эклектицизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="eclecticism" data-district="central">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/17.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Белинского, 7</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Центральный район</div>
+            <div class="favorite-card__tag">#эклектицизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="constructivism" data-district="central">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <a href="dvor.html" class="card-link"></a>
+            <div class="favorite-card__image" style="background-image: url('images/18.png');"></div>
+            <div class="favorite-card__info">
+              <div class="favorite-card__header">
+                <div class="favorite-card__name">Рубинштейна, 23</div>
+                <div class="favorite-card__rating">
+                  <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                  4.9
+                </div>
+              </div>
+              <div class="favorite-card__district">Центральный район</div>
+              <div class="favorite-card__tag">#конструктивизм</div>
+            </div>
+          </a>
+        </article>
+
+        <article class="favorite-card" data-style="eclecticism" data-district="central">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/19.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Восстания, 22</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Центральный район</div>
+            <div class="favorite-card__tag">#эклектицизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="eclecticism" data-district="vasilevskiy">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/20.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">4-я линия В.О., 7</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Васильевский остров</div>
+            <div class="favorite-card__tag">#эклектицизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="eclecticism" data-district="petrogradskaya">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/21.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Каменноостровский п...</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Петроградская сторона</div>
+            <div class="favorite-card__tag">#эклектицизм</div>
+          </div>
+        </article>
+
+        <article class="favorite-card" data-style="modern" data-district="petrogradskaya">
+          <button class="favorite-card__favorite">
+            <img src="images/heart.svg" alt="В избранное" class="favorite-icon">
+          </button>
+          <div class="favorite-card__image" style="background-image: url('images/22.png');"></div>
+          <div class="favorite-card__info">
+            <div class="favorite-card__header">
+              <div class="favorite-card__name">Проспект Добролюбов...</div>
+              <div class="favorite-card__rating">
+                <img src="images/kid_star.svg" alt="Рейтинг" class="star">
+                4.9
+              </div>
+            </div>
+            <div class="favorite-card__district">Петроградская сторона</div>
+            <div class="favorite-card__tag">#модерн</div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+    <!-- пагинация -->
+    <div class="pagination">
+      <button class="pagination__number pagination__number--active">1</button>
+      <button class="pagination__number">2</button>
+    </div>
+
+  </main>
+
+  <!-- подвальчик -->
+  <footer class="footer-full-width">
+    <div class="footer-container">
+      
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo-link">
+            <div class="footer__logo">
+              <img src="images/48.png" alt="Дворы.СПб" class="footer-logo-img">
+            </div>
+          </a>
+          <span class="footer__site-name">Дворы.СПб</span>
+        </div>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">
+            <img src="images/vk.svg" alt="VK" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/max.svg" alt="MAX" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/mail.svg" alt="mail" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__middle">
+        <div class="footer__sitemap">
+          <div class="footer__sitemap-title">Карта сайта:</div>
+          <div class="footer__links-row">
+            <div class="footer__links-col">
+              <a href="index.html">Главная</a>
+              <a href="mood.html">Выбор настроения</a>
+              <a href="catalog.html">Каталог</a>
+              <a href="#">Карта</a>
+            </div>
+            <div class="footer__links-col">
+              <a href="cabinet.html">Личный кабинет</a>
+              <a href="#">О нас</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer__support">
+            Нашли ошибку?<br>
+            Напишите нам на почту<br>
+            <a>support@gmail.com</a>
+          </div>
+          <div class="footer__agreements">
+            <a href="#">Согласие на обработку</a>
+            <a href="#">Согласие на рассылку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          2026 DvorySPb.ru. Политика конфиденциальности ПД Реквизиты
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+    <script>
+  function toggleMenu() {
+    const nav = document.getElementById('headerNav');
+    nav.classList.toggle('active');
+  }
+  </script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

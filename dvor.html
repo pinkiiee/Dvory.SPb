@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рубинштейна, 23 - Дворы.СПб</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-dvor.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo-link">
+        <div class="header__logo">
+          <img src="images/60.png" alt="Дворы.СПб" class="header-logo-img">
+        </div>
+      </a>
+      
+      <nav class="header__nav" id="headerNav">
+        <a href="index.html" class="header__nav-item">Главная</a>
+        <a href="mood.html" class="header__nav-item">Выбор настроения</a>
+        <a href="catalog.html" class="header__nav-item">Каталог</a>
+        <a href="#" class="header__nav-item">Карта</a>
+        <a href="#" class="header__nav-item">О нас</a>
+        <a href="#" class="header__nav-item">Контакты</a>
+      </nav>
+
+      <button class="header__menu-toggle" onclick="toggleMenu()">
+        <img src="images/menu.svg" alt="Меню" class="menu-icon">
+      </button>
+
+      <a href="cabinet.html" class="header__user-icon">
+        <img src="images/Group_86.svg" alt="Профиль" class="user-icon">
+      </a>
+    </div>
+  </header>
+
+  <main class="courtyard-page">
+
+    <div class="container">
+      
+      <div class="courtyard-layout">
+        
+        <!-- галерея -->
+        <div class="courtyard-gallery">
+          <img src="images/Rectangle 25.png" alt="Двор Рубинштейна 23 - вид 1" class="gallery-image">
+          <img src="images/Rectangle 26.png" alt="Двор Рубинштейна 23 - вид 2" class="gallery-image">
+          
+          <div class="gallery-left-bottom">
+            <img src="images/Rectangle 28.png" alt="Двор Рубинштейна 23 - вид 3" class="gallery-image">
+            <button class="emotion-btn">Смена эмоции</button>
+          </div>
+          
+          <div class="gallery-right-bottom">
+            <img src="images/Rectangle 27.png" alt="Двор Рубинштейна 23 - вид 4" class="gallery-image-tall">
+          </div>
+        </div>
+
+        <!-- инфа -->
+        <div class="courtyard-info">
+          <h1 class="courtyard-title">Рубинштейна, 23</h1>
+          
+          <div class="courtyard-description">
+            <p>Дом был построен в&nbsp;1912 году по&nbsp;заказу купца первой гильдии Ивана Яковлева, владельца сети мануфактурных магазинов в&nbsp;Петербурге. Архитектор И.И. Яковлев создал один из&nbsp;самых изящных образцов северного модерна.</p>
+            
+            <p>Фасад дома выходит на&nbsp;красную линию улицы Рубинштейна, а&nbsp;двор решен по&nbsp;принципу &laquo;колодца&raquo;&nbsp;&mdash; замкнутого пространства, образованного тремя корпусами, сходящимися под прямым углом.</p>
+            
+            <p>В&nbsp;этом дворе снимали сцены культового фильма &laquo;Брат-2&raquo;.</p>
+          </div>
+
+          <div class="courtyard-actions">
+            <button class="action-btn" title="В избранное">
+              <img src="images/heart-black.svg" alt="Избранное" class="action-icon">
+            </button>
+            <button class="action-btn" title="Поделиться">
+              <img src="images/share.svg" alt="Поделиться" class="action-icon">
+            </button>
+            <button class="action-btn" title="На карте">
+              <img src="images/location.svg" alt="На карте" class="action-icon">
+            </button>
+            <button class="action-btn" title="Обновить">
+              <img src="images/refresh.svg" alt="Обновить" class="action-icon">
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- подвальчик -->
+  <footer class="footer-full-width">
+    <div class="footer-container">
+      
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo-link">
+            <div class="footer__logo">
+              <img src="images/48.png" alt="Дворы.СПб" class="footer-logo-img">
+            </div>
+          </a>
+          <span class="footer__site-name">Дворы.СПб</span>
+        </div>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">
+            <img src="images/vk.svg" alt="VK" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/max.svg" alt="MAX" class="social-icon">
+          </a>
+          <a href="#" class="footer__social-link">
+            <img src="images/mail.svg" alt="mail" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__middle">
+        <div class="footer__sitemap">
+          <div class="footer__sitemap-title">Карта сайта:</div>
+          <div class="footer__links-row">
+            <div class="footer__links-col">
+              <a href="index.html">Главная</a>
+              <a href="mood.html">Выбор настроения</a>
+              <a href="catalog.html">Каталог</a>
+              <a href="#">Карта</a>
+            </div>
+            <div class="footer__links-col">
+              <a href="cabinet.html">Личный кабинет</a>
+              <a href="#">О нас</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer__support">
+            Нашли ошибку?<br>
+            Напишите нам на почту<br>
+            <a>support@gmail.com</a>
+          </div>
+          <div class="footer__agreements">
+            <a href="#">Согласие на обработку</a>
+            <a href="#">Согласие на рассылку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          2026 DvorySPb.ru. Политика конфиденциальности ПД Реквизиты
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('headerNav');
+    nav.classList.toggle('active');
+  }
+  </script>
+</body>
+</html>
